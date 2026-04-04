@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="./CSS/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📝 Minhas Tarefas</h1>
+            <p class="subtitle">Organize seu dia de forma simples</p>
+        </header>
+
+        <div class="input-section">
+            <input 
+                type="text" 
+                id="taskInput" 
+                placeholder="Digite uma nova tarefa..."
+                maxlength="100"
+            >
+            <button id="addBtn" onclick="addTask()">
+                <span>+</span> Adicionar
+            </button>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-number" id="totalTasks">0</span>
+                <span class="stat-label">Total</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" id="completedTasks">0</span>
+                <span class="stat-label">Concluídas</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" id="pendingTasks">0</span>
+                <span class="stat-label">Pendentes</span>
+            </div>
+        </div>
+
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filterTasks('all')">Todas</button>
+            <button class="filter-btn" onclick="filterTasks('pending')">Pendentes</button>
+            <button class="filter-btn" onclick="filterTasks('completed')">Concluídas</button>
+        </div>
+
+        <ul id="taskList" class="task-list">
+            <!-- Tarefas serão inseridas aqui -->
+        </ul>
+
+        <div class="empty-state" id="emptyState">
+            <span class="empty-icon">📋</span>
+            <p>Nenhuma tarefa encontrada</p>
+            <small>Adicione uma nova tarefa acima</small>
+        </div>
+    </div>
+
+    <script src="./JAVA/script.js"></script>
+</body>
+</html>
